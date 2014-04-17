@@ -15,6 +15,8 @@ module ChinaSMS
     @service.const_set("URL", options[:base_uri]) if options[:base_uri]
     @username = options[:username]
     @password = options[:password]
+
+    default_options.merge options
   end
 
   def to(receiver, content, options = {})
@@ -35,6 +37,7 @@ module ChinaSMS
 
   def default_options
     {
+      service:   @service,
       username:  @username,
       password:  @password
     }
