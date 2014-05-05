@@ -20,10 +20,10 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
 
-  spec.add_runtime_dependency 'iconv', '~> 1.0.4'
+  spec.add_runtime_dependency 'iconv', '~> 1.0'
 
-  spec.add_development_dependency "bundler", "~> 1.2"
-  spec.add_development_dependency "rake"
-  spec.add_development_dependency "rspec"
-  spec.add_development_dependency "webmock"
+  spec.add_development_dependency 'bundler', '~> 1.2'
+  spec.add_development_dependency 'rake', '~> 10.3'
+  spec.add_development_dependency 'rspec', '~> 2.14'
+  spec.add_development_dependency 'webmock', '~> 1.17'
 end
