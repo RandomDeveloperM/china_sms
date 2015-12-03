@@ -1,6 +1,4 @@
-# encoding: utf-8
 require 'json'
-require 'iconv'
 
 module ChinaSMS
   module Service
@@ -17,7 +15,7 @@ module ChinaSMS
           username: options[:username],
           pwd:      options[:password],
           p:        phones,
-          msg:      Iconv.conv('GBK', 'utf-8', content)
+          msg:      content.encode('GBK')
 
         res = Net::HTTP.get uri
         result JSON[res]

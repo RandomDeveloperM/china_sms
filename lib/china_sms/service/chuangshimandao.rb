@@ -1,5 +1,3 @@
-require 'iconv'
-
 module ChinaSMS
   module Service
     module Chuangshimandao
@@ -10,10 +8,10 @@ module ChinaSMS
       def to(phone, content, options)
         uri = URI.parse(URL)
         response = Net::HTTP.post_form(uri, {
-          sn:  options[:username],
-          pwd: options[:password],
-          mobile: phone,
-          content: Iconv.conv('gb2312', 'utf-8', content)
+          sn:      options[:username],
+          pwd:     options[:password],
+          mobile:  phone,
+          content: content.encode('GB2312')
         })
       end
 
